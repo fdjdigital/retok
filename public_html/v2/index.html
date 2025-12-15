@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funilaria e Pintura BH - Retok Centro Automotivo | Orçamento Grátis</title>
+    <meta name="description" content="Funilaria e pintura de qualidade em BH. Atendemos Buritis, Betânia, Estoril, Palmeiras e região. Orçamento grátis, garantia em todos os serviços. WhatsApp: (31) 3134-27-4525">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.47;
+            color: #1d1d1f;
+            background: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        /* Header - Estilo Apple */
+        .header {
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            min-height: 44px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: #86868b;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #0066cc;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* Botões estilo Apple */
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 18px;
+            font-weight: 400;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            font-size: 17px;
+            min-height: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #007aff 0%, #005ce6 100%);
+            color: white;
+            box-shadow: 0 1px 4px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 122, 255, 0.08);
+            color: #007aff;
+            border: 1px solid rgba(0, 122, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 122, 255, 0.15);
+        }
+
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 19px;
+            border-radius: 22px;
+            min-height: 44px;
+        }
+
+        /* Hero Section - Estilo Apple */
+        .hero {
+            background: linear-gradient(135deg, #000 0%, #1d1d1f 50%, #000 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 122, 255, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 96px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.083;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #fff 0%, #d1d1d6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 48px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 17px;
+        }
+
+        .hero-feature i {
+            color: #007aff;
+            font-size: 20px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+
+        .hero-location {
+            margin-top: 40px;
+            font-size: 19px;
+            opacity: 0.6;
+        }
+
+        /* Seções - Estilo Apple */
+        .section {
+            padding: 100px 0;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+            letter-spacing: -0.02em;
+            line-height: 1.07;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 21px;
+            color: #86868b;
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Why Choose - Estilo Apple */
+        .why-choose {
+            background: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 32px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #007aff;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+
+        .feature-card p {
+            font-size: 17px;
+            color: #86868b;
+            line-height: 1.47;
+        }
+
+        /* Services - Estilo Apple */
+        .services {
+            background: #f5f5f7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .service-header h3 {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .service-price {
+            font-size: 17px;
+            font-weight: 400;
+            color: #007aff;
+        }
+
+        .service-body {
+            padding: 24px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            color: #1d1d1f;
+        }
+
+        .service-features i {
+            color: #34c759;
+            font-size: 16px;
+        }
+
+        /* Special Offer - Estilo Apple */
+        .special-offer {
+            background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-offer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            pointer-events: none;
+        }
+
+        .offer-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-title {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .offer-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 48px 0;
+        }
+
+        .offer-benefit {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            border-radius: 16px;
+            backdrop-filter: saturate(180%) blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .offer-benefit i {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .offer-benefit h4 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .offer-benefit p {
+            font-size: 15px;
+            opacity: 0.8;
+        }
+
+        .countdown {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 16px;
+            margin: 32px 0;
+            font-size: 21px;
+            font-weight: 600;
+            backdrop-filter: saturate(180%) blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Gallery - Estilo Apple */
+        .gallery {
+            background: #fff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-top: 64px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 16/10;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #86868b;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Testimonials - Estilo Apple */
+        .testimonials {
+            background: #f5f5f7;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 24px;
+            font-size: 72px;
+            color: #007aff;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 24px;
+            font-size: 19px;
+            color: #1d1d1f;
+            line-height: 1.47;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #1d1d1f;
+            font-size: 17px;
+        }
+
+        .testimonial-stars {
+            color: #ff9500;
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .google-rating {
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px;
+            background: rgba(0, 122, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 122, 255, 0.1);
+        }
+
+        .google-rating h4 {
+            color: #1d1d1f;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        /* About - Estilo Apple */
+        .about {
+            background: #fff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 21px;
+            margin-bottom: 40px;
+            color: #1d1d1f;
+            line-height: 1.38;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            background: rgba(0, 122, 255, 0.05);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(0, 122, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #007aff;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            color: #86868b;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .values-list {
+            list-style: none;
+            margin-top: 40px;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: rgba(0, 122, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 122, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .values-list li:hover {
+            background: rgba(0, 122, 255, 0.05);
+            transform: translateX(4px);
+        }
+
+        .values-list i {
+            color: #007aff;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .values-list strong {
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+
+        /* Contact - Estilo Apple */
+        .contact {
+            background: #f5f5f7;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info {
+            background: #1d1d1f;
+            color: white;
+            padding: 40px;
+            border-radius: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-item i {
+            color: #007aff;
+            font-size: 24px;
+            margin-top: 4px;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 8px;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 17px;
+            line-height: 1.47;
+        }
+
+        .facilities {
+            margin-top: 32px;
+        }
+
+        .facilities h4 {
+            margin-bottom: 16px;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .facilities ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .facilities li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+        .facilities i {
+            color: #34c759;
+            font-size: 16px;
+        }
+
+        .map-container {
+            background: #fff;
+            border-radius: 18px;
+            padding: 40px;
+            text-align: center;
+            color: #86868b;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-container i {
+            font-size: 64px;
+            color: #d1d1d6;
+            margin-bottom: 24px;
+        }
+
+        .map-container h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+
+        .map-container p {
+            font-size: 17px;
+            margin-bottom: 24px;
+        }
+
+        /* Quote Section - Estilo Apple */
+        .quote-section {
+            background: #fff;
+            text-align: center;
+        }
+
+        .quote-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .quote-benefit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            color: #86868b;
+        }
+
+        .quote-benefit i {
+            color: #34c759;
+            font-size: 20px;
+        }
+
+        /* Footer - Estilo Apple */
+        .footer {
+            background: #1d1d1f;
+            color: white;
+            padding: 64px 0 24px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 16px;
+            color: #007aff;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #007aff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 122, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 122, 255, 0.2);
+        }
+
+        .social-links a:hover {
+            background: #007aff;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 4px;
+        }
+
+        /* WhatsApp Float Button - Estilo Apple */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25d366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Responsive Design - Estilo Apple */
+        @media (max-width: 1068px) {
+            .nav-container {
+                padding: 12px 16px;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        @media (max-width: 834px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: clamp(32px, 8vw, 56px);
+            }
+
+            .hero-features {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .offer-title {
+                font-size: clamp(28px, 6vw, 48px);
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 64px 0;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .hero {
+                padding: 100px 0 64px;
+            }
+
+            .section {
+                padding: 48px 0;
+            }
+
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 17px;
+            }
+
+            .whatsapp-float {
+                width: 52px;
+                height: 52px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 22px;
+            }
+        }
+
+        /* Scroll suave - Estilo Apple */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animações sutis */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-container > * {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.1s;
+        }
+
+        .hero-features {
+            animation-delay: 0.2s;
+        }
+
+        .hero-cta {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="#inicio" class="logo">RETOK</a>
+                <div class="tagline">Excelência em Funilaria e Pintura</div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:3134274525" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> (31) 3134-27-4525
+                </a>
+                <a href="#orcamento" class="btn btn-primary">Orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <h1>Funilaria e Pintura.<br>Reimaginada.</h1>
+            <p class="hero-subtitle">Transformamos seu veículo com a excelência que ele merece. Atendimento especializado, resultados impecáveis.</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Orçamento em 30 minutos</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Garantia em todos os serviços</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-star"></i>
+                    <span>Mais de 15 anos de experiência</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#orcamento" class="btn btn-primary btn-lg">Solicitar Orçamento</a>
+                <a href="#galeria" class="btn btn-secondary btn-lg">Ver Trabalhos</a>
+            </div>
+
+            <p class="hero-location">Atendemos Buritis, Betânia, Estoril, Palmeiras e região metropolitana</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section why-choose">
+        <div class="container">
+            <h2 class="section-title">Por que mais de 2.000 clientes confiaram na Retok?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Qualidade Garantida</h3>
+                    <p>Todos os nossos serviços incluem garantia. Usamos apenas materiais de primeira qualidade e tintas originais para garantir durabilidade e acabamento perfeito.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Atendimento Rápido</h3>
+                    <p>Orçamento em 30 minutos e execução ágil. Para reparos simples, entrega em até 48h. Porque sabemos que você precisa do seu carro.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Preço Justo</h3>
+                    <p>Transparência total nos orçamentos. Sem surpresas, sem custos ocultos. Parcelamos em até 6x sem juros no cartão.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Equipe Especializada</h3>
+                    <p>Profissionais com anos de experiência. Especializados em todas as marcas, do nacional ao importado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="section services">
+        <div class="container">
+            <h2 class="section-title">Soluções Completas</h2>
+            <p class="section-subtitle">Para seu Veículo</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Funilaria e Pintura Completa</h3>
+                        <div class="service-price">A partir de R$ 600</div>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reparos de colisões</li>
+                            <li><i class="fas fa-check"></i> Pintura completa e parcial</li>
+                            <li><i class="fas fa-check"></i> Acabamento original</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Lanternagem</h3>
+                        <div class="service-price">A partir de R$ 350</div>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reparo de lataria</li>
+                            <li><i class="fas fa-check"></i> Alinhamento estrutural</li>
+                            <li><i class="fas fa-check"></i> Substituição de peças</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Retoque de Riscos</h3>
+                        <div class="service-price">A partir de R$ 280</div>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Correção de riscos leves</li>
+                            <li><i class="fas fa-check"></i> Pintura localizada</li>
+                            <li><i class="fas fa-check"></i> Preservação da pintura original</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Martelinho de Ouro</h3>
+                        <div class="service-price">A partir de R$ 120</div>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reparo sem pintura</li>
+                            <li><i class="fas fa-check"></i> Preserva pintura original</li>
+                            <li><i class="fas fa-check"></i> Resultado invisível</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Polimento</h3>
+                        <div class="service-price">A partir de R$ 250</div>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Remoção de riscos</li>
+                            <li><i class="fas fa-check"></i> Restauração do brilho</li>
+                            <li><i class="fas fa-check"></i> Proteção da pintura</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 64px;">
+                <a href="#orcamento" class="btn btn-primary btn-lg">Solicitar Orçamento Personalizado</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="section special-offer">
+        <div class="container">
+            <div class="offer-container">
+                <h2 style="color: white; margin-bottom: 16px; font-size: 24px; font-weight: 400;">🎯 Oferta Exclusiva para Novos Clientes</h2>
+                <div class="offer-title">Avaliação Técnica Gratuita</div>
+                
+                <div class="offer-benefits">
+                    <div class="offer-benefit">
+                        <i class="fas fa-search"></i>
+                        <h4>Avaliação Completa</h4>
+                        <p>valor R$ 80</p>
+                    </div>
+                    <div class="offer-benefit">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Orçamento Detalhado</h4>
+                        <p>sem compromisso</p>
+                    </div>
+                    <div class="offer-benefit">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Consultoria Especializada</h4>
+                        <p>cuidados com pintura</p>
+                    </div>
+                </div>
+
+                <div class="countdown">
+                    ⏰ Restam apenas <span id="vagasRestantes">20</span> vagas esta semana
+                </div>
+
+                <p style="margin: 24px 0; opacity: 0.8; font-size: 17px;">Válida para novos clientes • Apenas mediante agendamento</p>
+                
+                <a href="#orcamento" class="btn btn-secondary btn-lg">Agendar Avaliação Gratuita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Transformação</h2>
+            <p class="section-subtitle">Veja o que fazemos. Cada veículo é tratado com máximo cuidado e precisão.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">Antes/Depois<br>Funilaria Completa</div>
+                <div class="gallery-item">Antes/Depois<br>Lanternagem</div>
+                <div class="gallery-item">Antes/Depois<br>Pintura Parcial</div>
+                <div class="gallery-item">Antes/Depois<br>Para-choque</div>
+                <div class="gallery-item">Antes/Depois<br>Martelinho de Ouro</div>
+                <div class="gallery-item">Antes/Depois<br>Polimento</div>
+                <div class="gallery-item">Antes/Depois<br>Retoque de Riscos</div>
+                <div class="gallery-item">Antes/Depois<br>Reparo Estrutural</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">Nossos Clientes</h2>
+            <p class="section-subtitle">O que eles dizem sobre nosso trabalho</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Batida feia no para-choque, achei que não tinha jeito. A Retok fez um milagre! Ficou melhor que novo. Atendimento nota 10!
+                    </div>
+                    <div class="testimonial-author">Carlos Silva, Buritis</div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Precisava pintar a porta inteira. Orçamento justo, prazo cumprido e qualidade excelente. Super recomendo!
+                    </div>
+                    <div class="testimonial-author">Maria Santos, Betânia</div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Profissionais sérios e competentes. Meu carro ficou impecável. Já indiquei para vários amigos.
+                    </div>
+                    <div class="testimonial-author">José Oliveira, Estoril</div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            
+            <div class="google-rating">
+                <h4>Google: 4.8/5 estrelas (127 avaliações)</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="section about">
+        <div class="container">
+            <h2 class="section-title">Tradição e Inovação</h2>
+            <p class="section-subtitle">Em Funilaria e Pintura</p>
+            
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Com mais de <strong>15 anos</strong> no mercado, a Retok se estabeleceu como referência em funilaria e pintura na região de Belo Horizonte. Nossa missão é devolver a seu veículo a aparência original, com a qualidade e o cuidado que você merece.
+                    </p>
+                    
+                    <ul class="values-list">
+                        <li>
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <strong>Transparência</strong><br>
+                                Orçamentos claros, sem surpresas
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>Qualidade</strong><br>
+                                Materiais premium e mão de obra especializada
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div>
+                                <strong>Agilidade</strong><br>
+                                Prazos cumpridos, atendimento rápido
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <strong>Confiança</strong><br>
+                                Relacionamento duradouro com nossos clientes
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">+2.000</span>
+                            <div class="stat-label">veículos atendidos</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">+15</span>
+                            <div class="stat-label">anos de experiência</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.8/5</span>
+                            <div class="stat-label">estrelas no Google</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <div class="stat-label">garantia nos serviços</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Visite Nossa Oficina</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Avenida Dom João VI, 501<br>Palmeiras, Belo Horizonte - MG<br>CEP: 30575-460</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário</h4>
+                            <p>Segunda a Sexta<br>8h às 18h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Contato</h4>
+                            <p>WhatsApp/Telefone<br>(31) 3134-27-4525</p>
+                        </div>
+                    </div>
+                    
+                    <div class="facilities">
+                        <h4>Facilidades</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Estacionamento próprio</li>
+                            <li><i class="fas fa-check"></i> Área coberta</li>
+                            <li><i class="fas fa-check"></i> Fácil acesso</li>
+                            <li><i class="fas fa-check"></i> Transporte público</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <i class="fas fa-map"></i>
+                    <h3>Localização</h3>
+                    <p>Google Maps</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-primary">Ver no Mapa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="orcamento" class="section quote-section">
+        <div class="container">
+            <h2 class="section-title">Solicite seu Orçamento</h2>
+            <p class="section-subtitle">Receba uma estimativa em até 30 minutos</p>
+            
+            <div style="text-align: center; margin: 64px 0;">
+                <a href="#" class="btn btn-primary btn-lg" style="font-size: 21px; padding: 20px 40px;">
+                    <i class="fas fa-calculator"></i> Solicitar Orçamento Online
+                </a>
+            </div>
+            
+            <div class="quote-benefits">
+                <div class="quote-benefit">
+                    <i class="fas fa-clock"></i>
+                    <span>Resposta em 30 minutos</span>
+                </div>
+                <div class="quote-benefit">
+                    <i class="fas fa-handshake"></i>
+                    <span>Sem compromisso</span>
+                </div>
+                <div class="quote-benefit">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Atendimento personalizado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#servicos">Funilaria e Pintura</a></li>
+                        <li><a href="#servicos">Lanternagem</a></li>
+                        <li><a href="#servicos">Retoque de Riscos</a></li>
+                        <li><a href="#servicos">Martelinho de Ouro</a></li>
+                        <li><a href="#servicos">Polimento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="tel:3134274525">(31) 3134-27-4525</a></li>
+                        <li>Av. Dom João VI, 501<br>Palmeiras, BH</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Retok Centro Automotivo. Todos os direitos reservados.</p>
+                <p>CNPJ: 61.484.474/0001-40</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5531313427452" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Contador de vagas dinâmico
+        function updateVagasCounter() {
+            const now = new Date();
+            const dayOfWeek = now.getDay();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            
+            let vagas = 0;
+            
+            if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                const totalMinutesInWeek = (5 * 10 * 60);
+                const currentMinutes = ((dayOfWeek - 1) * 10 * 60) + ((hour - 8) * 60) + minute;
+                
+                if (hour >= 8 && hour < 18) {
+                    const progress = currentMinutes / totalMinutesInWeek;
+                    vagas = Math.max(0, Math.round(20 - (20 * progress)));
+                } else if (hour < 8) {
+                    const previousDayMinutes = ((dayOfWeek - 2) * 10 * 60) + (10 * 60);
+                    if (previousDayMinutes >= 0) {
+                        const progress = previousDayMinutes / totalMinutesInWeek;
+                        vagas = Math.max(0, Math.round(20 - (20 * progress)));
+                    } else {
+                        vagas = 20;
+                    }
+                } else {
+                    const endOfDayMinutes = ((dayOfWeek - 1) * 10 * 60) + (10 * 60);
+                    const progress = endOfDayMinutes / totalMinutesInWeek;
+                    vagas = Math.max(0, Math.round(20 - (20 * progress)));
+                }
+            } else {
+                vagas = 0;
+            }
+            
+            document.getElementById('vagasRestantes').textContent = vagas;
+        }
+        
+        updateVagasCounter();
+        setInterval(updateVagasCounter, 60000);
+        
+        // Smooth scroll e navegação ativa
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(251, 251, 253, 0.9)';
+                header.style.boxShadow = '0 1px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(251, 251, 253, 0.8)';
+                header.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.08)';
+            }
+        });
+    </script>
+</body>
+</html>

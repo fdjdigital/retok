@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5THKVJ63');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Retok Funilaria e Pintura | Dicas e Novidades</title>
+    <meta name="description" content="Blog da Retok Funilaria e Pintura. Dicas de cuidados com seu veículo, novidades do setor automotivo e conteúdos exclusivos sobre funilaria e pintura.">
+    <meta name="author" content="Retok Funilaria e Pintura">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../assets/logo-favicon.jpg">
+    <link rel="apple-touch-icon" href="../assets/logo-favicon.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="../assets/logo-favicon.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog - Retok Funilaria e Pintura">
+    <meta property="og:description" content="Blog da Retok Funilaria e Pintura. Dicas de cuidados com seu veículo, novidades do setor automotivo e conteúdos exclusivos.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../assets/logo-favicon.jpg">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Design System - Retok Funilaria e Pintura */
+        :root {
+            /* Base colors */
+            --background: hsl(0, 0%, 100%);
+            --foreground: hsl(220, 13%, 18%);
+
+            /* Cards */
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(220, 13%, 18%);
+
+            /* Primary: Professional automotive blue */
+            --primary: hsl(221, 83%, 53%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --primary-hover: hsl(221, 83%, 48%);
+
+            /* Secondary: Premium gray */
+            --secondary: hsl(220, 14%, 96%);
+            --secondary-foreground: hsl(220, 13%, 18%);
+
+            /* Muted */
+            --muted: hsl(220, 14%, 96%);
+            --muted-foreground: hsl(220, 9%, 46%);
+
+            /* Accent: Energy orange for CTAs */
+            --accent: hsl(24, 95%, 53%);
+            --accent-foreground: hsl(0, 0%, 100%);
+            --accent-hover: hsl(24, 95%, 48%);
+
+            /* Success: Trust green */
+            --success: hsl(142, 71%, 45%);
+            --success-foreground: hsl(0, 0%, 100%);
+
+            /* Border */
+            --border: hsl(220, 13%, 91%);
+
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(221, 83%, 48%));
+            --gradient-cta: linear-gradient(135deg, hsl(24, 95%, 53%), hsl(24, 95%, 48%));
+
+            /* Shadows */
+            --shadow-soft: 0 2px 8px -1px hsl(220, 13%, 18%, 0.1);
+            --shadow-medium: 0 4px 16px -2px hsl(220, 13%, 18%, 0.15);
+            --shadow-strong: 0 8px 32px -4px hsl(220, 13%, 18%, 0.2);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-accent {
+            background: var(--gradient-cta);
+            color: var(--accent-foreground);
+        }
+
+        .btn-accent:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-strong);
+            transform: translateY(-4px);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            background: var(--gradient-hero);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 400%;
+            height: 400%;
+            object-fit: contain;
+            border-radius: 0.25rem;
+        }
+
+        /* Logo interativa */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        .logo-link:hover .logo-icon {
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Menu de Navegação Desktop */
+        .nav {
+            display: none;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav .btn-nav-cta {
+            background: var(--gradient-cta);
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav .btn-nav-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .nav .btn-nav-cta::after {
+            display: none;
+        }
+
+        /* Menu Hambúrguer Mobile */
+        .mobile-menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            gap: 5px;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-menu-toggle:focus,
+        .mobile-menu-toggle:active {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 3px;
+            background: var(--foreground);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animação do hambúrguer para X */
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Menu Mobile Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu-nav a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-nav a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-nav .btn-mobile-cta {
+            background: var(--gradient-cta);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-nav .btn-mobile-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            background: linear-gradient(to bottom right, var(--background), var(--secondary));
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Content */
+        .blog-section {
+            padding: 4rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .blog-card {
+            cursor: pointer;
+        }
+
+        .blog-card-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--secondary), var(--background));
+            border-radius: 0.75rem 0.75rem 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-card-image i {
+            width: 4rem;
+            height: 4rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: hsl(221, 83%, 53%, 0.1);
+            color: var(--primary);
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: var(--foreground);
+        }
+
+        .blog-card p {
+            color: var(--muted-foreground);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .blog-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Em breve */
+        .coming-soon {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--secondary);
+            border-radius: 0.75rem;
+        }
+
+        .coming-soon-icon {
+            width: 5rem;
+            height: 5rem;
+            background: var(--gradient-hero);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .coming-soon-icon i {
+            width: 2.5rem;
+            height: 2.5rem;
+            color: white;
+        }
+
+        .coming-soon h2 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+
+        .coming-soon p {
+            color: var(--muted-foreground);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--foreground);
+            color: var(--background);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+        }
+
+        .footer-company {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-company h3 {
+            font-size: 1.25rem;
+        }
+
+        .footer-description {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .footer-contact-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-top: 0.125rem;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-text p {
+            font-size: 0.875rem;
+            margin-bottom: 0.125rem;
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            box-shadow: var(--shadow-strong);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-btn svg {
+            display: block;
+        }
+
+        .whatsapp-btn:hover {
+            background: #22c55e;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .nav {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 899px) {
+            .nav {
+                display: none !important;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .header-content {
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .logo-link {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .mobile-menu-toggle {
+                margin-left: auto;
+            }
+
+            /* Logo menor no mobile */
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                background: transparent;
+                padding: 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5THKVJ63"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo interativa com link para o início -->
+                <a href="../" class="logo-link" title="Voltar para a página inicial">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="https://res.cloudinary.com/dfgwm62fw/image/upload/v1757366947/Logo_Retok_Branco_uazhja.jpg" alt="Retok Funilaria e Pintura - Voltar ao início">
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Menu de Navegação Desktop -->
+                <nav class="nav">
+                    <a href="../#sobre">Sobre Nós</a>
+                    <a href="../#servicos">Serviços</a>
+                    <a href="../#galeria">Galeria</a>
+                    <a href="../#testimonials">Depoimentos</a>
+                    <a href="./" style="color: var(--primary);">Blog</a>
+                    <a href="https://wa.me/553134274525?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20Vim%20pelo%20site." class="btn-nav-cta" target="_blank" rel="noopener noreferrer">Realizar Orçamento</a>
+                </nav>
+
+                <!-- Botão Menu Hambúrguer Mobile -->
+                <button class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Mobile Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu-nav">
+            <a href="../#sobre">Sobre Nós</a>
+            <a href="../#servicos">Serviços</a>
+            <a href="../#galeria">Galeria</a>
+            <a href="../#testimonials">Depoimentos</a>
+            <a href="./" style="color: var(--primary);">Blog</a>
+            <a href="https://wa.me/553134274525?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20Vim%20pelo%20site." class="btn-mobile-cta" target="_blank" rel="noopener noreferrer">Realizar Orçamento</a>
+        </nav>
+    </div>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Blog Retok</h1>
+            <p>Dicas, novidades e conteúdos exclusivos sobre funilaria, pintura e cuidados com seu veículo.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-section">
+        <div class="container">
+            <!-- Grid de Artigos -->
+            <div class="blog-grid">
+                <a href="como-escolher-oficina-funilaria-pintura-bh/" class="card blog-card" style="text-decoration: none; color: inherit;">
+                    <div class="blog-card-image">
+                        <img src="../images/veiculo-depois-do-conserto.webp" alt="Veículo após serviço de funilaria e pintura - Retok">
+                    </div>
+                    <span class="blog-card-category">Guia Completo</span>
+                    <h3>Como Escolher uma Oficina de Funilaria e Pintura de Confiança em BH</h3>
+                    <p>Guia prático e imparcial com 10 critérios objetivos, sinais de alerta e checklist para ajudar você a tomar uma decisão segura.</p>
+                    <div class="blog-card-meta">
+                        <span><i data-lucide="calendar" style="width: 1rem; height: 1rem;"></i> 15 Jan 2025</span>
+                        <span><i data-lucide="clock" style="width: 1rem; height: 1rem;"></i> 12 min de leitura</span>
+                    </div>
+                </a>
+
+                <!-- Espaço para próximos artigos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-company">
+                        <div class="logo-icon">
+                            <img src="https://res.cloudinary.com/dfgwm62fw/image/upload/v1757366947/Logo_Retok_Branco_uazhja.jpg" alt="Retok Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div>
+                            <h3>RETOK</h3>
+                            <p style="font-size: 0.875rem; opacity: 0.8;">Funilaria e Pintura</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Excelência em funilaria e pintura.
+                        Transformamos seu veículo com qualidade e garantia.
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="../#servicos" style="color:white">Funilaria e Pintura</a></li>
+                        <li><a href="../#servicos" style="color:white">Lanternagem</a></li>
+                        <li><a href="../#servicos" style="color:white">Retoque de Riscos</a></li>
+                        <li><a href="../#servicos" style="color:white">Martelinho de Ouro</a></li>
+                        <li><a href="../#servicos" style="color:white">Polimento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="../#sobre" style="color:white">Sobre Nós</a></li>
+                        <li><a href="../#galeria" style="color:white">Galeria</a></li>
+                        <li><a href="../#testimonials" style="color:white">Depoimentos</a></li>
+                        <li><a href="./" style="color:white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section">
+                    <h4>Fale Conosco</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" class="footer-contact-icon" style="flex-shrink: 0;">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        <div class="footer-contact-text">
+                            <p>WhatsApp:</p>
+                            <p style="font-weight: 600;">(31) 3427-4525</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i data-lucide="map-pin" class="footer-contact-icon"></i>
+                        <div class="footer-contact-text">
+                            <p>Endereço:</p>
+                            <p>Av. Dom João VI, 501</p>
+                            <p>Palmeiras, BH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Retok Funilaria e Pintura. Todos os direitos reservados.</p>
+                <p>CNPJ: 61.484.474/0001-40</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/553134274525?text=Ol%C3%A1%2C%20vim%20pelo%20blog%20e%20gostaria%20de%20falar%20com%20voc%C3%AAs." class="whatsapp-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Menu Mobile - Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-nav a');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>

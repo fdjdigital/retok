@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Geral - Retok</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: hsl(0, 0%, 100%);
+            --foreground: hsl(220, 13%, 18%);
+            --primary: hsl(221, 83%, 53%);
+            --border: hsl(220, 13%, 91%);
+            --muted-foreground: hsl(220, 9%, 46%);
+            --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(221, 83%, 48%));
+            --shadow-soft: 0 2px 8px -1px hsl(220, 13%, 18%, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--foreground);
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-icon img {
+            width: 140px;
+            height: auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--gradient-hero);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-subtitle {
+            color: var(--muted-foreground);
+            font-size: 1rem;
+        }
+
+        .dashboard-wrapper {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 16px -2px hsl(220, 13%, 18%, 0.15);
+        }
+
+        .dashboard-iframe {
+            width: 100%;
+            height: 90vh;
+            min-height: 600px;
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .logo-icon img {
+                width: 120px;
+            }
+            
+            .dashboard-iframe {
+                height: 80vh;
+                min-height: 500px;
+            }
+            
+            .back-btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-icon">
+                <img src="https://res.cloudinary.com/dfgwm62fw/image/upload/v1737366947/Logo_Retok_Branco_uazhja.jpg" alt="Retok Logo">
+            </div>
+            <a href="/dashboards" class="back-btn">
+                <i data-lucide="arrow-left" style="width: 1rem; height: 1rem;"></i>
+                Voltar
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">Dashboard Geral</h1>
+            <p class="dashboard-subtitle">Visão completa de todas as plataformas</p>
+        </div>
+
+        <div class="dashboard-wrapper">
+            <iframe 
+                class="dashboard-iframe"
+                title="report" 
+                src="https://app.reportei.com/embed/0AY4fIIgMoFdCPV9scKiePJDwviXe0Rp"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Verificar autenticação
+        if (sessionStorage.getItem('retokLoggedIn') !== 'true') {
+            window.location.href = '/dashboards';
+        }
+    </script>
+</body>
+</html>

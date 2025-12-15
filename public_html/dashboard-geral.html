@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboards - Retok Funilaria e Pintura</title>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Design System - Retok Funilaria e Pintura */
+        :root {
+            --background: hsl(0, 0%, 100%);
+            --foreground: hsl(220, 13%, 18%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(220, 13%, 18%);
+            --primary: hsl(221, 83%, 53%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --primary-hover: hsl(221, 83%, 48%);
+            --secondary: hsl(220, 14%, 96%);
+            --secondary-foreground: hsl(220, 13%, 18%);
+            --muted: hsl(220, 14%, 96%);
+            --muted-foreground: hsl(220, 9%, 46%);
+            --accent: hsl(24, 95%, 53%);
+            --accent-foreground: hsl(0, 0%, 100%);
+            --accent-hover: hsl(24, 95%, 48%);
+            --success: hsl(142, 71%, 45%);
+            --success-foreground: hsl(0, 0%, 100%);
+            --border: hsl(220, 13%, 91%);
+            --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(221, 83%, 48%));
+            --gradient-cta: linear-gradient(135deg, hsl(24, 95%, 53%), hsl(24, 95%, 48%));
+            --shadow-soft: 0 2px 8px -1px hsl(220, 13%, 18%, 0.1);
+            --shadow-medium: 0 4px 16px -2px hsl(220, 13%, 18%, 0.15);
+            --shadow-strong: 0 8px 32px -4px hsl(220, 13%, 18%, 0.2);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            padding: 0;
+            background: none;
+        }
+
+        .logo-icon img {
+            width: 180px;
+            height: auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 2rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.875rem, 4vw, 2.5rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        /* Login Container */
+        .login-container {
+            max-width: 500px;
+            margin: 4rem auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-strong);
+        }
+
+        .login-icon {
+            width: 4rem;
+            height: 4rem;
+            background: var(--gradient-hero);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--foreground);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px hsla(221, 83%, 53%, 0.1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-hero);
+            color: var(--primary-foreground);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-logout {
+            background: var(--gradient-cta);
+            color: var(--accent-foreground);
+            margin-top: 2rem;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-logout:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            background: hsl(0, 84%, 60%, 0.1);
+            color: hsl(0, 84%, 40%);
+            padding: 0.875rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+            border: 1px solid hsl(0, 84%, 60%, 0.2);
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Dashboard Selection */
+        .dashboard-selection {
+            display: none;
+        }
+
+        .dashboard-selection.show {
+            display: block;
+        }
+
+        .dashboard-cards-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .dashboard-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .dashboard-link-card {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .dashboard-link-card:hover {
+            box-shadow: var(--shadow-strong);
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            width: 4rem;
+            height: 4rem;
+            background: var(--gradient-hero);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--foreground);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .card-description {
+            color: var(--muted-foreground);
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-button {
+            background: var(--gradient-hero);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-link-card:hover .card-button {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--foreground);
+            color: var(--background);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Utility */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-container {
+                margin: 2rem auto;
+                padding: 1.5rem;
+            }
+
+            .logo-icon img {
+                width: 140px;
+            }
+
+            .dashboard-link-card {
+                padding: 1.5rem;
+            }
+
+            .card-icon {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            .card-title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="https://res.cloudinary.com/dfgwm62fw/image/upload/v1737366947/Logo_Retok_Branco_uazhja.jpg" alt="Retok Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <div class="container" id="loginSection">
+        <div class="login-container">
+            <div class="login-icon">
+                <i data-lucide="lock" style="color: white; width: 2rem; height: 2rem;"></i>
+            </div>
+            <h2 class="text-center" style="margin-bottom: 0.5rem; font-size: 1.75rem;">Área Restrita</h2>
+            <p class="text-center" style="color: var(--muted-foreground); margin-bottom: 2rem; font-size: 0.95rem;">
+                Acesso exclusivo para colaboradores da Retok
+            </p>
+
+            <div class="error-message" id="errorMessage">
+                Senha incorreta. Tente novamente.
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password" class="form-label">Senha de Acesso</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="form-input" 
+                        placeholder="Digite a senha"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i data-lucide="arrow-right" style="margin-right: 0.5rem; width: 1.25rem; height: 1.25rem;"></i>
+                    Acessar Dashboards
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Selection Section -->
+    <div class="container dashboard-selection" id="dashboardSelection">
+        <div class="section">
+            <div class="section-header">
+                <h1 class="section-title">Selecione o Dashboard</h1>
+                <p class="section-subtitle">
+                    Escolha qual relatório deseja visualizar
+                </p>
+            </div>
+
+            <div class="dashboard-cards-grid">
+                <!-- Dashboard 1: Tráfego Pago -->
+                <a href="dashboard-trafego-pago.html" class="dashboard-link-card">
+                    <div class="card-icon">
+                        <i data-lucide="trending-up" style="color: white; width: 2rem; height: 2rem;"></i>
+                    </div>
+                    <h3 class="card-title">Métricas de Tráfego Pago</h3>
+                    <p class="card-description">
+                        Acompanhe os resultados das campanhas de Google Ads, Facebook Ads e outras plataformas pagas
+                    </p>
+                    <div class="card-button">
+                        Acessar Dashboard
+                        <i data-lucide="arrow-right" style="width: 1.25rem; height: 1.25rem;"></i>
+                    </div>
+                </a>
+
+                <!-- Dashboard 2: Geral -->
+                <a href="dashboard-geral.html" class="dashboard-link-card">
+                    <div class="card-icon">
+                        <i data-lucide="bar-chart-3" style="color: white; width: 2rem; height: 2rem;"></i>
+                    </div>
+                    <h3 class="card-title">Dashboard Geral</h3>
+                    <p class="card-description">
+                        Visão completa de todas as plataformas: redes sociais, site, atendimento e conversões
+                    </p>
+                    <div class="card-button">
+                        Acessar Dashboard
+                        <i data-lucide="arrow-right" style="width: 1.25rem; height: 1.25rem;"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="btn btn-logout" id="logoutBtn">
+                    <i data-lucide="log-out" style="margin-right: 0.5rem; width: 1.25rem; height: 1.25rem;"></i>
+                    Sair
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Retok Funilaria e Pintura. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem;">CNPJ: 61.484.474/0001-40</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Configuração de senha (ALTERE AQUI)
+        const SENHA_CORRETA = 'retok2025'; // ALTERE ESTA SENHA
+
+        // Elementos
+        const loginSection = document.getElementById('loginSection');
+        const dashboardSelection = document.getElementById('dashboardSelection');
+        const loginForm = document.getElementById('loginForm');
+        const passwordInput = document.getElementById('password');
+        const errorMessage = document.getElementById('errorMessage');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        // Verificar se já está logado
+        if (sessionStorage.getItem('retokLoggedIn') === 'true') {
+            showDashboardSelection();
+        }
+
+        // Login
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const senha = passwordInput.value;
+
+            if (senha === SENHA_CORRETA) {
+                sessionStorage.setItem('retokLoggedIn', 'true');
+                errorMessage.classList.remove('show');
+                showDashboardSelection();
+            } else {
+                errorMessage.classList.add('show');
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        });
+
+        // Logout
+        logoutBtn.addEventListener('click', function() {
+            sessionStorage.removeItem('retokLoggedIn');
+            showLogin();
+        });
+
+        // Funções de exibição
+        function showDashboardSelection() {
+            loginSection.classList.add('hidden');
+            dashboardSelection.classList.add('show');
+            lucide.createIcons();
+        }
+
+        function showLogin() {
+            dashboardSelection.classList.remove('show');
+            loginSection.classList.remove('hidden');
+            passwordInput.value = '';
+            errorMessage.classList.remove('show');
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
